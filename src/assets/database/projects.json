@@ -1,0 +1,118 @@
+{
+    "project": [
+        
+            {
+                "id": "1",
+                "title": "AL WASL",
+                "description": "Description for AL WASL",
+                "thumbnail":"01dummy.png",
+                "slides": [
+                    {"banner": "01dummy.png", "thumbnail": "01dummy.png"},
+                    {"banner": "01dummy.png", "thumbnail": "01dummy.png"},
+                    {"banner": "01dummy.png", "thumbnail": "01dummy.png"},
+                    {"banner": "01dummy.png", "thumbnail": "01dummy.png"},
+                    {"banner": "01dummy.png", "thumbnail": "01dummy.png"}
+                ],
+                "tags": ["AI", "Automation", "Innovation"],
+                "project_type": "AI",
+                "previouslyUsed": [
+                    "tool1",
+                    "tool2",
+                    "tool3",
+                    "tool4",
+                    "tool5"
+                ],
+                "ValueAdded": [
+                    "value1",
+                    "value2",
+                    "value3",
+                    "value4",
+                    "value5"
+                ],
+                "BusinessRequirements": [
+                    "requirement1",
+                    "requirement2",
+                    "requirement3",
+                    "requirement4",
+                    "requirement5"
+                ]
+            },
+            {
+                "id": "1",
+                "title": "HUDA BEAUTY",
+                "description": "Description for HUDA BEAUTY",
+                "thumbnail":"01dummy.png",
+                "slides": [
+                    {"banner": "01dummy.png", "thumbnail": "01dummy.png"},
+                    {"banner": "01dummy.png", "thumbnail": "01dummy.png"},
+                    {"banner": "01dummy.png", "thumbnail": "01dummy.png"},
+                    {"banner": "01dummy.png", "thumbnail": "01dummy.png"},
+                    {"banner": "01dummy.png", "thumbnail": "01dummy.png"}
+                ],
+                "tags": ["AI", "Automation", "Innovation"],
+                "project_type": "other",
+                "previouslyUsed": [
+                    "tool1",
+                    "tool2",
+                    "tool3",
+                    "tool4",
+                    "tool5"
+                ],
+                "ValueAdded": [
+                    "value1",
+                    "value2",
+                    "value3",
+                    "value4",
+                    "value5"
+                ],
+                "BusinessRequirements": [
+                    "requirement1",
+                    "requirement2",
+                    "requirement3",
+                    "requirement4",
+                    "requirement5"
+                ]
+            },
+            {
+                "id": "1",
+                "title": "DUBAI DRY DOCKS",
+                "description": "Description for DUBAI DRY DOCKS",
+                "thumbnail":"01dummy.png",
+                "slides": [
+                    {"banner": "01dummy.png", "thumbnail": "01dummy.png"},
+                    {"banner": "01dummy.png", "thumbnail": "01dummy.png"},
+                    {"banner": "01dummy.png", "thumbnail": "01dummy.png"},
+                    {"banner": "01dummy.png", "thumbnail": "01dummy.png"},
+                    {"banner": "01dummy.png", "thumbnail": "01dummy.png"}
+                ],
+                "tags": ["AI", "Automation", "Innovation"],
+                "project_type": "copilot",
+                "previouslyUsed": [
+                    "tool1",
+                    "tool2",
+                    "tool3",
+                    "tool4",
+                    "tool5"
+                ],
+                "ValueAdded": [
+                    "value1",
+                    "value2",
+                    "value3",
+                    "value4",
+                    "value5"
+                ],
+                "BusinessRequirements": [
+                    "requirement1",
+                    "requirement2",
+                    "requirement3",
+                    "requirement4",
+                    "requirement5"
+                ]
+            }
+            
+        ]
+        
+    
+    
+}
+   

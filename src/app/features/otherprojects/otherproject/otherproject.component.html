@@ -1,0 +1,166 @@
+<div class="container ml-2 mr-2">
+  <div class="grid fillter-control justify-content-end mt-2 mb-2">
+    <div class="col-12 text-right">
+      <ul class="flex flex-row align-items-center ml-auto list-none justify-content-end">
+        <li><p-button label="Clear Filters" class="btn-link underline" size="large"
+            [ngClass]="(selectedTechTags.length !=0 || selectedIndustryTag.length != 0 || selectedProjectTag.length !=0 )? 'active-link' :''"
+            [text]="true" (click)="clearFilter()" />
+        </li>
+        <li>
+          <p-button class="p-button-secondary m-2"
+            [ngClass]="(selectedTechTags.length !=0 || selectedIndustryTag.length != 0  || selectedProjectTag.length !=0)? 'highlight' :''"
+            icon="pi pi-filter" label="Filter" (onClick)="openFilterSidebar()" [ngClass]=""></p-button>
+        </li>
+        <li>
+          <p-button class="p-button-secondary m-2" icon=" pi pi-sort-alt" label="Sort"
+            (click)="openSortSidebar()"></p-button>
+        </li>
+        <li>
+          <p-button class="p-button-secondary m-2 mr-0 " [ngClass]="isListViewMode ? 'highlight' :''"
+            [icon]=" isListViewMode ? 'pi pi-th-large ' :'pi pi-list-check'"
+            [label]="isListViewMode ?' Grid View ' : 'List View'" (click)="togleListViewMode()"></p-button>
+        </li>
+      </ul>
+
+      <!-- <p-button class="p-0" label="Clear All" [text]="true" [ngClass]=""></p-button> 
+      <p-button class="p-button-secondary m-2" icon="pi pi-filter" label="Filter" (onClick)="openFilterSidebar()"
+        [ngClass]=""></p-button>
+      <p-button class="p-button-secondary m-2" icon="pi pi-sort-alt" label="Sort"
+        (click)="openSortSidebar()"></p-button>
+      <p-button class="p-button-secondary m-2 mr-0" icon="pi pi-list-check" label="List View"
+        (click)="togleListViewMode()"></p-button>
+        -->
+    </div>
+  </div>
+
+
+  <ng-container *ngIf="filteredProjectLists?.length !== 0; else noData">
+    <ng-container *ngIf="!isListViewMode else gridView">
+      <app-list *ngIf="filteredProjectLists" [data]="filteredProjectLists"></app-list>
+    </ng-container>
+    <ng-template #gridView>
+      <app-grid *ngIf="filteredProjectLists" [data]="filteredProjectLists"></app-grid>
+    </ng-template>
+  </ng-container>
+  <ng-template #noData>
+    <app-no-result></app-no-result>
+  </ng-template>
+
+
+
+
+  <p-sidebar #sidebar [(visible)]="sidebarVisible" (onHide)="hideSidebar()" position="right"
+    class="p-filtersort-sidebar">
+    <ng-template pTemplate="header">
+      <div class="flex align-items-center gap-2">
+        <span class="fontBold fontHeading text-2xl">
+          {{sidebarHeader}}
+        </span>
+      </div>
+    </ng-template>
+    <p-divider type="solid" />
+    <form [formGroup]="form">
+      <ng-container *ngIf="sortSidebarVisible">
+        <div class="overflow-y-auto  body-scroll">
+          <div class="card flex justify-content-start sortcontrol ">
+            <div class="flex flex-column gap-3 ml-1 pt-2">
+              <div *ngFor="let category of sortByData" class="field-checkbox">
+                <p-radioButton [inputId]="category.key" name="sortby" [value]="category" formControlName="sortby" />
+                <label [for]="category.key" class="ml-2">
+                  {{ category.name }}
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+
+
+
+
+
+      <ng-container *ngIf="filterVisible">
+        <div class="card cardheader">
+          <label for="username" class="fontBold text-xl">Project Name</label>
+          <div class="mt-1">
+            <p-iconField iconPosition="left">
+              <p-inputIcon styleClass="pi pi-search" />
+              <input type="text" formControlName="searchControl" pInputText placeholder="Search" class=" w-full"
+                #searchText />
+            </p-iconField>
+          </div>
+        </div>
+        <p-divider type="solid" />
+        <div class="overflow-y-auto body-scroll">
+          <h4 class="mt-0 text-xl">Project Type</h4>
+
+          <ng-container *ngFor="let item of projecttype">
+            <p-chip [ngClass]="{'selected': selectedProjectTag.includes(item)}" (click)="onClickProjectChip(item)"
+              class="custom-chip ml-1 mr-1 cursor-pointer">
+
+              <span class="h-2rem flex align-items-center justify-content-center">
+                <i class="pi " [ngClass]="selectedProjectTag.includes(item) ? ' pi-times' :' pi-plus'"
+                  (click)="clearProjectTags()"></i>
+              </span>
+              <span class="ml-2 font-medium">
+                {{ item.title }}
+              </span>
+            </p-chip>
+          </ng-container>
+
+          <p-divider type="solid" />
+
+          <h4 class="mt-0 text-xl">Technology</h4>
+
+          <ng-container *ngFor="let item of technologies ">
+            <p-chip [ngClass]="{'selected': selectedTechTags.includes(item)}" (click)="onClickTechChip(item)"
+              class="custom-chip ml-1 mr-1 cursor-pointer">
+
+              <span class="h-2rem flex align-items-center justify-content-center">
+                <i class="pi " [ngClass]="selectedTechTags.includes(item) ? ' pi-times' :' pi-plus'"
+                  (click)="clearTachTags()"></i>
+              </span>
+              <span class="ml-2 font-medium">
+                {{ item.title }}
+              </span>
+            </p-chip>
+          </ng-container>
+
+          <p-divider type="solid" />
+
+          <h4 class="mt-0 text-xl">Industry</h4>
+
+          <ng-container *ngFor="let item of industriesData">
+            <p-chip [ngClass]="{'selected': selectedIndustryTag.includes(item)}" (click)="onClickIndustryChip(item)"
+              class="custom-chip ml-1 mr-1 cursor-pointer">
+
+              <span class="h-2rem flex align-items-center justify-content-center">
+                <i class="pi " [ngClass]="selectedIndustryTag.includes(item) ? ' pi-times' :' pi-plus'"
+                  (click)="clearIndustryTags()"></i>
+              </span>
+
+              <span class="ml-2 font-medium">
+                {{ item.label}}
+              </span>
+
+            </p-chip>
+          </ng-container>
+        </div>
+      </ng-container>
+
+
+
+      <!-- (click)="this.sidebarHeader === 'Sort' ? sortByAscending() : onFilterHandle()" -->
+
+      <div class="mt-auto">
+        <hr class="mb-3 mx-3 border-top-1 border-none surface-border" />
+        <p-button class="btn-secondary border-round-xs mr-3"
+          (click)="this.sidebarHeader === 'Sort' ? sortByAscending() : onFilterHandle()" severity="danger" size="small"
+          label=" Submit" icon="pi pi-check" />
+        <p-button (click)="clearFilter()" class="btn-secondary-outline border-round-xs" severity="danger" size="small"
+          label="Clear All" icon="pi pi-times" iconPos="right" />
+      </div>
+    </form>
+  </p-sidebar>
+</div>

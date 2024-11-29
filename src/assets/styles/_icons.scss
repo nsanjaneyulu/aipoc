@@ -1,0 +1,139 @@
+.icon{
+    &.icon-24{
+        height: 24px;
+        width: 24px;
+    }
+    &.icon-32{
+        height: 32px;
+        width: 32px;
+    }
+    &.icon-40{
+        height: 40px;
+        width: 40px;
+    }
+    &.icon-50{
+        height: 50px;
+        width: 50px;
+    }
+    &.color-white{
+        color: #FFF;
+    }
+    &.icon-logout{
+        content: url("../icons/icon_logout.svg");
+    }
+    &.icon-home{
+        content: url("../icons/icon_home.svg");
+    }
+    &.icon-home-active{
+        content: url("../icons/icon_home-active.svg");
+    }
+    &.icon-aiproject{
+        content: url("../icons/icon_aiproject.svg");
+    }
+    &.icon-aiproject-active{
+        content: url("../icons/icon_aiprojects-active.svg");
+    }
+    &.icon-otherproject{
+        content: url("../icons/icon_otherproject.svg");
+    }
+    &.icon-otherproject-active{
+        content: url("../icons/icon_otherproject-active.svg");
+    }
+    &.icon-videos{
+        content: url("../icons/icon_videos.svg");  
+    }
+    &.icon-videos-active{
+        content: url("../icons/icon_videos-active.svg");
+    }
+    &.icon-presentations{
+        content: url("../icons/icon_presentations.svg");  
+    }
+    &.icon-presentations-active{
+        content: url("../icons/icon_presentations-active.svg");
+    }
+    &.icon-copilot{
+        content: url("../icons/icon_copilot.svg");
+    }
+    &.icon-copilot-active{
+        content: url("../icons/icon_copilot-active.svg"); 
+    }
+    &.icon-linkdien{
+        content: url("../icons/icon_linkdien.svg");
+    }
+    &.icon-linkdien-active{
+        content: url("../icons/icon_linkdien-active.svg"); 
+    }
+    &.icon-instagram{
+        content: url("../icons/icon_instagram.svg");
+    }
+    &.icon-instagram-active{
+        content: url("../icons/icon_instagram-active.svg"); 
+    }
+    &.icon-github{
+        content: url("../icons/icon_github.svg");
+    }
+    &.icon-github-active{
+        content: url("../icons/icon_github-active.svg"); 
+    }
+    &.icon-globespace{
+        content: url("../icons/icon_globespace.svg");
+    }
+    &.icon-globespace-active{
+        content: url("../icons/icon_globespace-active.svg"); 
+    }
+    &.icon-circle-left-arrow{
+        content: url("../icons/icon_circle-arrow-left.svg"); 
+    }
+    &.icon-circle-left-arrow-active{
+        content: url("../icons/icon_globespace-active.svg"); 
+    }
+    &.icon-circle-right-arrow{
+        content: url("../icons/icon_circle-arrow-right.svg"); 
+    }
+    &.icon-circle-right-arrow-active{
+        content: url("../icons/icon_globespace-active.svg"); 
+    }
+    &.icon-arrow-left{
+        content: url("../icons/icon_arrow-left.svg"); 
+    }
+    &.icon-arrow-right{
+        content: url("../icons/icon_arrow-right.svg"); 
+    }
+    &.icon-business-requirement{
+        content: url("../icons/icon_business-requirement.svg"); 
+    }
+    &.icon-bussiness-solutions{
+        content: url("../icons/icon_solutions.svg"); 
+    }
+    &.icon-value-added{
+        content: url("../icons/icon_value-added.svg"); 
+    }
+    &.icon-listque{
+        content: url("../icons/icon_listque.svg"); 
+    }
+    &.icon-research{
+        content: url("../icons/icon_research.svg"); 
+    }
+    &.icon-user_group{
+        content: url("../icons/icon_usergroup.svg"); 
+    }
+    &.icon-headset{
+        content: url("../icons/icon_headset.svg"); 
+    }
+    &.icon-copilot_addoptions{
+        content: url("../icons/icon_copilot-addoptions.svg"); 
+    }
+    &.icon-prompt{
+        content: url("../icons/icon_prompt.svg"); 
+    }
+    &.icon-success-matrics{
+        content: url("../icons/icon_success-matrics.svg"); 
+    }
+    &.icon-clients{
+        content: url("../icons/icon_client.svg"); 
+    }
+     &.icon-back{
+        content: url("../icons/icon_arrow-back.svg"); 
+    }
+
+}

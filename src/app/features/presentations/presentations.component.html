@@ -1,0 +1,94 @@
+<div class="container ml-2 mr-2">
+  <div class="grid">
+
+    <div class="col-9">
+      <h3 class="fontSizeLG fontMedium">Experience Delphi Projects Through Presentations</h3>
+      <div class="office-viewer radisu-1">
+        <!-- ngx-doc-viewer component to display the .pptx file -->
+        <ngx-doc-viewer class="radisu-1" [url]="currentPresentation?.pptUrl" viewer="office"
+          style="width:100%; height:450px; min-height: 450px;"></ngx-doc-viewer>
+      </div>
+
+      <h2 class="mt-4 mb-3 fontSizeXL fontBold headingtext">{{ currentPresentation?.title }}</h2>
+      <ng-container *ngIf='tags?.length !=0'>
+        <ng-container *ngFor="let tag of tags">
+          <p-chip class="fontMedium mr-2 mt-4 lineHight" [label]="tag " />
+        </ng-container>
+
+      </ng-container>
+      <p class="fontSizeMD fontMedium regular-color lineHight-p">{{ currentPresentation?.description }}</p>
+      <!-- <div class="arrow left-arrow" (click)="changeImage('prev')">&#10094;</div>
+      <div class="arrow right-arrow" (click)="changeImage('next')">&#10095;</div> -->
+    </div>
+    <div class="col-3">
+      <h3 class="fontSizeLG fontMedium ml-2">More Presentations</h3>
+      <div class="overflow-x-auto scroll-height ">
+        <div class="presentation-card  zoom-card list-card mb-4 white-color"
+          *ngFor="let item of presentations; let i = index" (click)="loadPresentationOnClick(i)">
+          <div class="zoom-card">
+            <div class="thumbnail">
+              <img [src]="item?.thumbnail" class="radisu-1" alt="Presentation Image" />
+            </div>
+            <div class="description pl-2 pr-2 pb-2">
+              <h3 class="mb-0 mt-1 text-left cardTitle fontBold fontSizeMD">{{ item?.title | uppercase |
+                characterCutter:' ':25 }}</h3>
+              <div class="card flex align-items-center gap-2 flex-wrap">
+                <ng-container *ngFor="let tag of item?.tagsCSV.slice(0, 2)">
+                  <p-chip class="fontMedium" [label]="tag | characterCutter:' ':8" [title]="tag" />
+                </ng-container>
+                <!-- <ng-container *ngIf="item?.tagsCSV.length > 1">
+                  <button class="secondary" p-button label="More">More</button></ng-container> -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <section class="relative product-carousel container">
+    <div class="grid">
+      <div class="col-12">
+        <h3 class="fontSizeMD fontBold font-xl mt-3">
+          Presentations
+        </h3>
+      </div>
+    </div>
+
+
+    <div class="grid">
+      <div class="col-12">
+        <app-carousel [data]="presentations" (changePPT)="selectPPT($event)"></app-carousel>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- <div class="presentations">
+    <div class="leftRight flex align-items-center justify-content-between">
+      <h2>Presentations</h2>
+      <div class="flex gap-4">
+        <div class="icon icon-24 icon-arrow-left" (click)="changeThumbnail('prev')">
+          &#10094;
+        </div>
+        <div class="icon icon-24 icon-arrow-right" (click)="changeThumbnail('next')">
+          &#10095;
+        </div>
+      </div>
+    </div>
+    <div class="presentation-cards">
+      <div class="presentation-card" *ngFor="let presentation of visiblePresentations; let i = index"
+        (click)="selectImage(i)">
+        <img [src]="presentation.imageUrl" alt="Presentation Image" />
+        <h3 class="mb-0 text-left">{{ presentation.title }}</h3>
+        <div class="tags justify-content-start text-left">
+          <ng-container *ngFor="let tag of presentation.tags">
+            <p-chip [label]="tag" class="mr-2" />
+          </ng-container>
+          
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>

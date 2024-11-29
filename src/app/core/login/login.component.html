@@ -1,0 +1,7 @@
+<form [formGroup]="loginForm">
+    <input type="text" pInputText formControlName="username" />
+    <!-- <input type="password" pInputText formControlName="password" /> -->
+    <p-password type="text" pInputText  formControlName="password" />
+
+    <p-button (click)="handleLoginClick()">Submit</p-button>
+</form>

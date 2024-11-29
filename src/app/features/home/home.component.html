@@ -1,0 +1,160 @@
+<div class="container ml-2 mr-2">
+  <div class="grid">
+    <div class="col-12">
+      <ng-container>
+        <app-hero-carousel *ngIf="heroSlider" [data]="heroSlider" [numVisible]="numVisible" [numScroll]="numScroll">
+        </app-hero-carousel>
+      </ng-container>
+
+    </div>
+
+
+
+
+    <!-- <div class="col-12">
+      <div class="banner radius-1">
+        <img [src]="currentBanner?.imagePath" alt="Banner Image" class="radius-1" />
+        <div class="arrow left-arrow" (click)="changeImage('prev')">&#10094;</div>
+        <div class="arrow right-arrow" (click)="changeImage('next')">&#10095;</div>
+        <div class="banner-content">
+          <div class="banner-text">
+            <h1>{{ currentBanner.title }}</h1>
+            <p>{{ currentBanner.subTitle }}</p>
+          </div>
+          <div class="banner-button">
+            <p-button class="btn-secondary border-round-xs" severity="danger" label="Know More"
+              icon="pi pi-arrow-right" />
+          </div>
+        </div>
+      </div> -->
+
+  </div>
+</div>
+<div class="container ml-2 mr-2 mt-0">
+  <div class="grid">
+    <div class="col-4">
+      <div class="customcard-wraper ">
+        <div class="p-3 pb-0">
+          <h4 class="fontBold block-title mt-0 mb-3">Top Projects</h4>
+        </div>
+
+        <div class="overflow-y-auto h-22rem p-1 pb-0">
+          <ng-container *ngFor="let item of topProjects ">
+            <div class="item-card d-flex align-center radius-1 p-2 shadow-none">
+              <img [src]="item.thumbnail" [alt]="item.altText" class="item-image" />
+              <div class="item-info">
+                <h3>{{ item.title | characterCutter:' ':15 }}</h3>
+                <p>{{ item.description | characterCutter:' ':25 }}</p>
+              </div>
+              <button (click)="navigate(item?.type , item?.id)" rounded="true" pButton icon="pi pi-angle-right"
+                class="navigate-btn"></button>
+            </div>
+          </ng-container>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-4">
+
+      <div class="customcard-wraper ">
+        <div class="p-3 ">
+          <div class="grid">
+            <!-- {{this.statistics | json}} -->
+            <div class="col-12 ">
+              <h4 class="fontBold block-title mt-0 mb-0">Copilot Statistics</h4>
+            </div>
+
+            <div class="co-6 md:col-6" *ngFor="let item of statistics['copilot']">
+              <div class="p-2 pb-0 pr-0 pt-1 pl-3">
+                <div class="flex align-items-center gap-2">
+                  <div class="">
+                    <img [src]="item?.icon" alt="">
+                  </div>
+                  <div class="title">
+                    <div class="counnt ">
+                      <h3 class="fontBold m-0">{{item.counts}}</h3>
+                    </div>
+                    <div class="headeing mt-0">
+                      <p class="m-0">{{item.title}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="grid">
+            <div class="col-12">
+              <h4 class="fontBold block-title mt-3 mb-0">AI Project Statistics</h4>
+            </div>
+            <div class="co-6 md:col-6" *ngFor="let item of statistics['aiproject']">
+              <div class="p-2 pb-0 pr-0 pt-1 pl-3">
+                <div class="flex align-items-center gap-2">
+                  <div class="">
+                    <img [src]="item?.icon" alt="">
+                  </div>
+                  <div class="title">
+                    <div class="counnt ">
+                      <h3 class="fontBold m-0">{{item.counts}}</h3>
+                    </div>
+                    <div class="headeing mt-0">
+                      <p class="m-0">{{item.title}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <div class="col-4">
+      <div class="customcard-wraper p-3">
+        <div class="flex align-items-center justify-content-between">
+          <div>
+            <h4 class="fontBold block-title mt-0">Our Partnerships</h4>
+          </div>
+          <div class="carousel-controls flex gap-2" *ngIf="paginatedItems">
+            <div (click)="previousPage()" class="icon icon-32 icon-circle-left-arrow cursor-pointer">
+            </div>
+            <div (click)="nextPage()" class="icon icon-32 icon-circle-right-arrow cursor-pointer"></div>
+          </div>
+        </div>
+        <div class="container mr-2 ml-2">
+          <div class="grid justify-content-center">
+            <div class="col-4" *ngFor="let logo of paginatedItems">
+              <div class="logo-card justify-content-center text-center">
+                <div class="thumbnial text-center">
+                  <img [src]="logo?.thumbnail" [alt]="logo?.altText" loading="lazy" class="w-5rem h-5rem">
+                </div>
+                <!-- <div class="title text-center">
+                  <h4>{{logo?.title}}</h4>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="logo-carousel client-carousel-wraper">
+          <div class=" ml-2 mr-2">
+            <div *ngFor="let row of [0, 1]" class="grid justify-content-between align-center mb-4">
+              <ng-container *ngFor="let logo of getVisibleLogos(row)">
+                <div class="col-4">
+                  <div class="thumbnailholder radius-1">
+                    <img loading="eager" [src]="logo?.thumbnail" [alt]="logo?.altText" class="radius-1" />
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>

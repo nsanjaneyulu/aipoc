@@ -1,0 +1,279 @@
+$white:#FFFF;
+$font:'Space Grotesk', sans-serif;
+::-webkit-scrollbar {
+    width: 7px;               /* width of the entire scrollbar */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #D1D5DB; 
+     border-radius: 10px; 
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #FF9B79;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid #FF9B79;
+    border-radius: 10px;  /* creates padding around scroll thumb */
+  }
+  .headingtext{
+    color: #181818;
+  }
+
+.dot{
+    margin-left: 1rem;
+    .p-button {
+        background-color: $white !important;
+        border: 0 solid #ebebeb;
+        border-radius: 2.5rem;
+        height: 2.5rem;
+        width: 2.5rem;
+        color: #17b4e9;
+        box-shadow: 0 0 7px #fbeeee;
+
+    }
+  }
+.btn-secondary {
+    .p-button {
+        background-color: #EB5C2D !important; 
+        color: $white;
+        border-radius: 4px;
+        transition: all ease 0.3s;
+        position: relative;
+        z-index: 1;
+        border: 1px solid #EB5C2D;
+        &::before {
+            position: absolute;
+            left: 0;
+            right: 0; // Changed to 0 for full coverage
+            top: 0;
+            height: 0;
+            width: 0;
+            content: "";
+            z-index: 1;
+            background-color: #ea4108 !important; 
+            transition: all ease 0.3s;
+        }
+ 
+        &:hover {
+            &::before {
+                height: 100%;
+                width: 100%; // Added '%' to make it a percentage
+                z-index: -1;
+            }
+        }
+    }
+ }
+ 
+
+ .btn-secondary-outline {
+    .p-button {
+        background-color: $white !important; 
+        color: #EB5C2D;
+        border-radius: 4px;
+        transition: all ease 0.3s;
+        position: relative;
+        z-index: 1;
+        border: 1px solid #EB5C2D;
+        &::before {
+            position: absolute;
+            left: 0;
+            right: 0; // Changed to 0 for full coverage
+            top: 0;
+            height: 0;
+            width: 0;
+            content: "";
+            z-index: 1;
+            background-color: #ea4108 !important; 
+            transition: all ease 0.3s;
+            
+        }
+ 
+        &:hover {
+            color: $white;
+            transition: all ease 0.2s;
+            &::before {
+                height: 100%;
+                width: 100%; // Added '%' to make it a percentage
+                z-index: -1;
+            }
+        }
+    }
+ }
+
+
+ .descriptioncard{
+    display: grid;
+    height: calc(100% - 50px);
+    place-content: space-between;
+}
+
+.p-chip{
+    background-color: #5F5F5F;
+    color: $white;
+    font-size: 0.87rem;
+    font-family: $font;
+}
+
+.p-custom-card{
+    .p-card-body{
+        padding: 0;
+    }
+}
+
+.heroslider{
+    .p-carousel .p-carousel-content .p-carousel-prev, .p-carousel .p-carousel-content .p-carousel-next{
+        position: absolute;
+        left: auto;
+        top: 50%;
+        background: $white;
+        z-index: 99;
+        opacity: 1;
+        background: rgb(255 255 255);
+    }
+    .p-carousel-prev  {
+        position: absolute;
+        left: auto;
+        top: 50%;
+        background: $white;
+        z-index: 99;
+        opacity: 1;
+    }
+    .p-carousel-next{
+        left: auto;
+        right: 0;
+        top: 50%;
+    }
+    .p-carousel-indicators{
+        align-items: center;
+    }
+    .p-carousel-indicators .p-carousel-indicator button{
+        width: 1rem;
+        height: 1rem;
+        border-radius: 1rem;
+    }
+    .p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+        background-color: #e94e24;
+        border-radius: 10px;
+        width: 2.5rem;
+        height: 1rem;
+    }
+}
+ .p-card{
+    padding: 0;
+    box-shadow: 0 0 4px #dfdfdf;
+    border-radius: 10px;
+    .p-card-body{
+        padding: 0;
+    }
+    .p-card-content{
+        padding: 0;
+    }
+ }
+ .regular-color{
+    color: #8B8B8B;
+ }
+
+ .gallery-card{
+    background-color: #000;
+    border-radius: 10px;
+    img{
+      border-radius: 10px;
+    }
+
+    .p-galleria-thumbnail-wrapper{
+        position: relative;
+        .p-galleria-thumbnail-container{
+          background: transparent
+          
+        }
+      }
+      .gallery-thumbnial{
+        height: 90px;
+        width: 90%;
+        border-radius: 10px;
+        box-shadow: 0 0 2px #000;
+        box-shadow: 0 0 8px rgb(226 212 212);
+        filter: brightness(0.5);
+    }
+   
+    .p-galleria .p-galleria-thumbnail-container .p-galleria-thumbnail-prev, .p-galleria .p-galleria-thumbnail-container .p-galleria-thumbnail-next {
+      position: absolute;
+      left: auto;
+      top: 50%;
+      background-color: #000;
+      z-index: 99;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+    }
+    .p-galleria .p-galleria-thumbnail-container .p-galleria-thumbnail-prev{
+        left: 0;
+
+    }
+    .p-galleria .p-galleria-thumbnail-container .p-galleria-thumbnail-next{
+        left: auto;
+        right: 0;
+        
+    }
+    .p-galleria .p-galleria-item-nav{
+        background: rgba(96, 94, 94 , 0.5);
+        margin: 0;
+    }
+
+  }
+
+    .p-galleria-item img {
+    max-height: 400px !important;
+}
+.lineHight-p {
+    line-height: 1.5rem;
+}
+
+.p-icon-field-left > .p-inputtext {
+    padding-left: 2rem;
+}
+  
+.p-carousel .p-carousel-indicators {
+    padding: 0.2rem;
+}
+.profile{
+    height: 2.5rem !important;
+    width: 2.5rem !important;
+    background: #fff;
+    border-radius: 2.5rem;
+    img{
+         height: 2.5rem !important;
+        width: 2.5rem !important;
+        border-radius: 2.5rem; 
+    }
+}
+.shaddow{
+    box-shadow: 0 0 7px #fbeeee;
+}
+input{
+   //  box-shadow: 0 0 3px #fbeeee;
+   //  border: 1px solid #fbeeee;
+     border: 1px solid #d8d8d8;
+    &:focus{
+        box-shadow: none;
+        outline: 1px solid #fbeeee;;
+        box-shadow: 0 0 3px #fbeeee;
+         border: 1px solid #d8d8d8;
+    }
+
+}
+.header-toolbar{
+    input{
+   //  box-shadow: 0 0 3px #fbeeee;
+   //  border: 1px solid #fbeeee;
+        border: 1px solid #f8f8f8 !important;
+        &:focus{
+            border: 1px solid #f8f8f8 !important;
+        }
+    }
+    .p-inputtext{
+        outline: 1px solid #fbeeee;; 
+      box-shadow: 0 0 3px #fbeeee;
+    }
+}
+

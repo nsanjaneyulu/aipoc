@@ -1,0 +1,39 @@
+<p-toolbar styleClass="fontMedium header-toolbar w-full  ">
+
+    <div class="flex justify-content-between  w-full align-items-center pr-0">
+
+        <div class="col-6">
+            <p-iconField iconPosition="left">
+                <p-inputIcon styleClass="pi pi-search" />
+                <input type="text" [(ngModel)]="searchText" name="searchText" (ngModelChange)="searchInput(searchText)"
+                    class="border-round-3xl w-full" pInputText placeholder="Search Projects, Case Studies etc" />
+            </p-iconField>
+        </div>
+
+        <div class="col-4 text-right">
+            <div class="flex align-items-center justify-content-end ">
+
+                <div class="flex align-items-center gap-2">
+                    <span class="primary-text-color">
+                        {{userprofile}}
+                    </span>
+
+                    <img class="profile shaddow" [src]="profileImage" alt="">
+
+                </div>
+
+                <div class="card flex justify-content-center">
+                    <!-- <p-button class="" rounded="true" icon="pi pi-ellipsis-v" /> -->
+                    <p-button icon="pi pi-ellipsis-v" class="dot" [rounded]="true" severity="danger" />
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <ng-template pTemplate="end">
+
+    </ng-template>
+
+
+</p-toolbar>

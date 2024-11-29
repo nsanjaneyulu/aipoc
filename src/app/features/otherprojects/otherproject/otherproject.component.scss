@@ -1,0 +1,24 @@
+.body-scroll{
+    height: calc(100vh - 20rem)
+     //   height: calc(100vh - 12rem);
+
+}
+.cardheader{
+    margin-bottom: 1.4rem;
+}
+// .body-scroll :not(.) {
+//    // height: calc(100vh - 20rem);
+// }
+.body-scroll:has(.sortcontrol) {
+    height: calc(100vh - 13rem);
+}
+li{
+    border-right: 2px solid #8B8B8B;
+    border-radius: 2px;
+    &:first-child{
+        border: 0;
+    }
+    &:last-child{
+        border: 0;
+    }
+}

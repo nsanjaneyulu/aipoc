@@ -1,0 +1,31 @@
+.container-wrapper {
+    display: flex;
+    transition: all ease-in 0.5ms;
+    height: 100vh;
+}
+
+.sidebar {
+    transition: all ease-in 0.5ms;
+    height: calc(100vh - 1rem);
+}
+
+.sidebar.collapsed {
+    width: 0;
+    transition: all ease-in 0.5ms;
+    min-width: 0;
+}
+
+.sidebar.expand {
+    width: 250px;
+    transition: all ease-in 0.5ms;
+    min-width: 250px;
+}
+
+.layout-container {
+    min-height: calc(100vh - 1rem);
+}
+
+.content-container {
+    height: calc(100vh - 90px);
+    overflow-y: auto;
+}

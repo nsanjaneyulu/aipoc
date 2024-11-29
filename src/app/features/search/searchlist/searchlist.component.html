@@ -1,0 +1,13 @@
+<div class="container mr-2 ml-2">
+    <ng-container *ngIf="searchResult?.length != 0 else noData">
+        <ng-container *ngIf="isGridViewMode else listViewMode"></ng-container>
+        <app-list [data]="searchResult"></app-list>
+
+        <ng-template #listViewMode>
+            <app-grid> [data]="searchResult"</app-grid>
+        </ng-template>
+    </ng-container>
+    <ng-template #noData>
+        <app-no-result></app-no-result>
+    </ng-template>
+</div>

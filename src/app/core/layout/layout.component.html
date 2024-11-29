@@ -1,0 +1,13 @@
+<div class="flex container-wrapper p-2">
+    <aside class="sidebar" [ngClass]="isExpandable ? 'collapsed' : 'expand'">
+        <app-sidebar></app-sidebar>
+    </aside>
+    <main class="layout-container flex-grow-1 p-2 pl-4">
+        <header>
+            <app-header></app-header>
+        </header>
+        <section class="content-container">
+            <router-outlet></router-outlet>
+        </section>
+    </main>
+</div>

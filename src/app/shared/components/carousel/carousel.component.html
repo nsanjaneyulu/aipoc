@@ -1,0 +1,32 @@
+<div class="grid">
+    <p-carousel [value]="items" [numVisible]="4" [showIndicators]="false" [numScroll]="1" [circular]="false"
+        [responsiveOptions]="responsiveOptions">
+
+        <ng-template let-item pTemplate="item" let-index="index">
+            <div class="col">
+                <p-card class="custom-card zoom-card cursor-pointer" (click)="handleNvigation(item?.id)">
+                    <div class="p-2 ">
+                        <div class="card-thumbnial">
+                            <img [src]="item?.thumbnail" [alt]="item?.altText" class="w-full" />
+                        </div>
+                        <div class="title text-left p-3">
+                            <h3 class="line-height-3 primary-text-color  mt-0 mb-0 fontSizeMD fontBold">
+                                {{item?.title | characterCutter:' ':30 }}​
+                            </h3>
+                            <ng-container *ngIf="tags.length != 0">
+                                <div class="mt-3" *ngIf="let tag of tags">
+                                    <p-tag value="Contrast" [rounded]="true" />
+                                </div>
+                            </ng-container>
+                            <p-button
+                                class="default p-0 pl-0 pr-0 mt-2 block primary-text-color btn-link fontRegular border-0 default-copilot"
+                                icon="pi pi-arrow-right" iconPos="right" label="Read More" [text]="true" />
+                        </div>
+                    </div>
+
+                </p-card>
+            </div>
+        </ng-template>
+
+    </p-carousel>
+</div>

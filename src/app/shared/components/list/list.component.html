@@ -1,0 +1,47 @@
+<div class="content-wraper container ">
+    <div class="grid">
+        <div class="col-12 md:col-6 lg:col-3" *ngFor="let item of projectData" (click)="handleNavigation(item.id)">
+            <p-card class="card-item cursor-pointer ">
+                <ng-template pTemplate="header">
+                    <div class="p-2">
+                        <img [src]="item?.thumbnail ==='' ? defaultThumbnial : item?.thumbnail" [alt]="item.altText">
+                    </div>
+                </ng-template>
+                <div class="description p-3 h-11rem">
+                    <h3 class="mb-3 fontBold fontSizeMD">{{item?.title | uppercase | characterCutter:' ':25 }}</h3>
+                    <div class="card flex align-items-center gap-2 flex-wrap">
+                        <!-- <p-chip [label]="item?.tagscsv" /> -->
+                        <p-chip class="fontMedium" [label]="tag | characterCutter:' ':5 " [title]="tag"
+                            *ngFor="let tag of item?.tagsCSV.slice(0, 2)" />
+                        <!-- <p-button class="pl-0 pr-0" icon="pi pi-tags" severity="secondary" [text]="true" label="More"
+                            outlined="true"></p-button> -->
+                    </div>
+
+                    <p class="fontMedium fontSizeMD regular-color">{{item?.description | characterCutter:' ':50 }}</p>
+                </div>
+            </p-card>
+        </div>
+
+    </div>
+</div>
+
+<!-- <p-sidebar [(visible)]="sidebarVisible" position="right">
+    <div>
+        <h3>Filters</h3>
+        <p-iconField iconPosition="left">
+            <p-inputIcon styleClass="pi pi-search" />
+            <input type="text" pInputText placeholder="Search" />
+        </p-iconField>
+    </div>
+    <p-card>
+        <h4>Technology</h4>
+        <p-chip [label]="tag" *ngFor="let tag of technologies" />
+
+    </p-card>
+
+    <p-card>
+        <h4>Industry</h4>
+        <p-chip [label]="tag" *ngFor="let tag of industry" />
+
+    </p-card>
+</p-sidebar> -->

@@ -1,0 +1,10 @@
+.banner{
+  text-align: center;
+    margin: auto;
+}
+.wrapper{
+  height: calc(100vh - 90px);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}

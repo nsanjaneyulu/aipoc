@@ -1,0 +1,19 @@
+<div class="grid">
+    <div class="col-12 cursor-pointer " *ngFor="let item of projectData" (click)="handleNavigation(item.id)">
+        <div class="card-item list-card pl-3 pr-3  custom-card   w-full align-items-start">
+            <div class="grid overflow-x-hidden">
+                <div class="col-4">
+                    <img [src]="item?.thumbnail ==='' ? defaultThumbnial : item?.thumbnail" class="w-full"
+                        [alt]="item.altText">
+                </div>
+                <div class="col-8">
+                    <h3 class="mb-3 mt-1 fontBold fontSizeLG headingtext">{{item?.title | characterCutter:' ':40 }}</h3>
+                    <div class="card flex align-items-center gap-2 flex-wrap">
+                        <p-chip [label]="tag" *ngFor="let tag of item?.tagsCSV.slice(0, 3)" />
+                    </div>
+                    <p class="fontMedium fontSizeMD regular-color">{{item?.description | characterCutter:' ':120}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

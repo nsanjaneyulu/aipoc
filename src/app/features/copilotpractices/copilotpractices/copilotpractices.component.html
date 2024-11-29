@@ -1,0 +1,71 @@
+<div class="container ml-2 mr-2">
+  <div class="grid fillter-control justify-content-end mt-2 mb-2">
+    <div class="col-12">
+      <p-carousel class="heroslider radius-1" [showNavigators]="false" [value]="heroSlider" [circular]="false"
+        autoplayInterval="3000" [numVisible]="1" [numScroll]="1">
+        <ng-template let-slide pTemplate="item">
+          <div class="border-0 surface-border border-round p-0 radius-1">
+            <div class="mb-0 ">
+              <div class="relative mx-auto">
+                <img [src]="slide?.imagePath" [alt]="slide?.altText" class="w-full border-round radius-1" />
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </p-carousel>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="col-12">
+      <h3 class="fontSizeLG fontBold mt-0 mb-2 ">
+        Delphi Offerings
+      </h3>
+    </div>
+
+
+  </div>
+
+  <div class="grid grid-item-5">
+    <div class="col " *ngFor="let item of offering ; let i = index">
+      <div class="card border-1 surface-border border-round p-0 h-15rem" [ngStyle]="{'background-image': setbg(i)}"
+        id="bg+{{i}}">
+        <div class="card-body bg-color-0 justify-content-center">
+          <div class="card-thumbnial radius-1 w-12rem p-3 flex justify-content-center text-center m-auto ">
+            <img [src]="item?.thumbnail" class="w-12rem" alt="">
+          </div>
+          <div class="title text-center p-3">
+            <h3 class="line-height-3  mt-0 mb-0 fontSizeMD fontBold">{{item?.title | characterCutter:' ': 50}}​</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <section class="relative product-carousel container">
+    <div class="grid">
+      <div class="col-12">
+        <h3 class="fontSizeLG fontBold mt-4 mb-2">
+          Copilot Use Cases
+        </h3>
+      </div>
+    </div>
+
+
+    <div class="grid">
+      <div class="col-12">
+        <app-carousel *ngIf="usecaseSlides.length > 0" [data]="usecaseSlides"></app-carousel>
+        <!-- <app-carousel  [items]="presentations"></app-carousel> -->
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+</div>
+<!-- <app-listview [data]="this.projectList"></app-listview> -->

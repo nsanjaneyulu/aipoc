@@ -1,0 +1,37 @@
+<div class="relative">
+    <p-galleria class="gallery-card" [value]="products" [thumbnailsPosition]="position"
+        [responsiveOptions]="responsiveOptions" [(activeIndex)]="activeIndex" [showItemNavigators]="false"
+        [containerStyle]="{ 'max-width': '100%','max-height': '450px' }" [numVisible]="4">
+        <ng-template pTemplate="item" let-item>
+            <div class="body">
+                <div class="poster" *ngIf="getMediaType(item.url) === 'image'">
+                    <img class="w-full" [src]="item.url ==='' ? defaultThumbnial : item?.url" [alt]="item.title"
+                        style=" min-height: 450px; display: block;" />
+                </div>
+                <div class="player" *ngIf="getMediaType(item.url) === 'video'">
+                    <video autoplay class="radius-1 w-full" style="width: 100%; min-height: 450px; display: block; "
+                        [poster]="item" preload="metadata" [src]="item?.url" type="video/mp4" width="100%" name="media"
+                        controls muted loop="true">
+
+                    </video>
+                </div>
+            </div>
+        </ng-template>
+
+        <!-- <ng-template pTemplate="thumbnail" let-item>
+            <div class="grid grid-nogutter justify-content-center">
+                <div class="col">
+                    <img [src]="item?.url ==='' ? defaultThumbnial : item?.url" class="gallery-thumbnial"
+                        [alt]="item.title" />
+
+                </div>
+            </div>
+        </ng-template> -->
+
+    </p-galleria>
+    <div class="py-2 navigator-controler">
+        <p-button type="button" class=" btn-preview" icon="pi pi-angle-left" (onClick)="prev()" severity="secondary"
+            styleClass="mr-2" />
+        <p-button type="button" class="btn-next" styleClass=" " icon="pi pi-angle-right" (onClick)="next()" />
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="sidebar-wrapper vertical-nav white-color" [ngClass]=" isExpandable? '' :''">
+  <div class="header sidebar-header text-center">
+    <img class='logo m-auto' src="../../../assets/images/logo.png" alt="">
+  </div>
+
+  <div class="sidebar-body">
+    <div class="flex flex-column sidenav-body align-content-between">
+      <div class="menu-items mt-3">
+        <ul class="vertical-nav">
+          <li *ngFor="let item of items;" class="flex align-items-center fontMedium cursor-pointer pl-4"
+            [routerLink]="item.routerlink" (isActiveChange)="onRouterLinkActive($event, item.routerlink)"
+            routerLinkActive="activeLink" [routerLinkActiveOptions]="{exact: false}">
+            <div class="mr-2 icon icon-24 " [ngClass]="getIconClass(item)">
+            </div>
+            <div class="label fontSizeMD ml-2">{{ item.label }}</div>
+          </li>
+        </ul>
+
+      </div>
+
+
+      <div class="addverticepanel">
+        <h4 class="fontMedium text-2xl m-0 mb-1"><span>Explore</span>
+          the world of <br />
+          <span class="text-highlight">AI</span>
+          in Delphi
+        </h4>
+        <p-button class="p-button-default border-round-xs text-red border-0 " [routerLink]="['/aiprojects']"
+          routerLinkActive="router-link-active" label="Know More" icon="pi pi-arrow-right" iconPos="right"></p-button>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar-footer text-center">
+    <h4 class="fontMedium mt-2 mb-2">Connect with us on:</h4>
+    <ul class="flex justify-content-center m-0 p-0 gap-3 align-items-center">
+      <li *ngFor="let item of socialPlatFormList" class=" list-none ">
+        <a [href]="item?.url" target="_blank"><img class="icon icon-24" [src]="item?.icon" [alt]="item?.title"></a>
+      </li>
+    </ul>
+  </div>
+
+</div>

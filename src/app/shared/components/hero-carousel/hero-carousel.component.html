@@ -1,0 +1,29 @@
+<p-carousel class="hero-slider heroslider " [value]="heroslides" [numVisible]="visibleSlide" [circular]="true"
+    [numScroll]="scrollSlide" [showIndicators]="true" autoplayInterval="3000" [showNavigators]="false">
+    <ng-template let-slide pTemplate="item">
+        <div class="border-none surface-border border-round">
+            <div class="">
+                <div class="relative mx-auto">
+                    <img loading="eager" [src]="slide?.imagePath" [alt]="slide?.altText" class="w-full border-round" />
+                    <!-- {{slide?.redirectionLink}} -->
+                    <div class="banner-content absolute top-auto">
+                        <!-- <div class="banner-text">
+                            <h1>{{ product.title }}</h1>
+                            <p>{{ product.subTitle }}</p>
+                        </div> -->
+                        <div class="banner-button bottom-50">
+                            <p-button iconPos="right" class="btn-secondary border-round-xs"
+                                [routerLink]="slide?.redirectionLink" severity="danger" label="Know More"
+                                icon="pi pi-arrow-right" />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="mb-3 font-medium">
+                {{ 'Slide 1'}}
+            </div> -->
+
+        </div>
+    </ng-template>
+</p-carousel>

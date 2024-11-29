@@ -1,0 +1,30 @@
+<div class="grid col-12">
+  <div class="col-8">
+    <div class="carousel-container">
+      <div class="carousel-display">
+        <div class="carousel-arrow left-arrow" (click)="navigate('prev')">
+          <span>&#10094;</span>
+        </div>
+        <img
+          [src]="currentImage.image"
+          alt="carousel item"
+          class="main-image"
+        />
+        <div class="carousel-arrow right-arrow" (click)="navigate('next')">
+          <span>&#10095;</span>
+        </div>
+      </div>
+      <div class="thumbnail-row">
+        <div
+          class="thumbnail"
+          *ngFor="let item of items; let i = index"
+          [class.active]="i === currentIndex"
+          (click)="selectItem(i)"
+        >
+          <img [src]="item.thumbnailImage" alt="thumbnail item" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">Test</div>
+</div>

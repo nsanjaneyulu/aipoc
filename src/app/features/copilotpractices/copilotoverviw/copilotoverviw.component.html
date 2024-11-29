@@ -1,0 +1,88 @@
+<div class="container ml-2 mr-2" *ngIf="project">
+  <div class="grid">
+    <div class="col-12">
+      <div class="flex align-items-center">
+        <div class="cursor-pointer"><p-button (click)="goBack()" [text]="true" severity="secondary"
+            icon="pi pi-arrow-left" /></div>
+        <div>
+          <h1 class="m-0 fontSizeXL fontBold headingtext">{{project?.title}}</h1>
+
+        </div>
+      </div>
+      <p-chip [label]="tag" *ngFor="let tag of project?.appsNamesCSV" class="mr-2" />
+      <p class="fontSizeMD fontMedium regular-color lineHight-p">
+        {{project?.description}}
+      </p>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="col-7 mb-2">
+      <app-carouselproduct [data]="bannerList"></app-carouselproduct>
+    </div>
+    <div class="col-5">
+      <div class="card descriptioncard p-3 pt-0 ">
+
+        <div class="card card-body mb-4 p-3 ">
+          <div class="overflow-y-auto h-30rem">
+
+
+            <ng-container *ngIf="project.problemStatementCSV?.length !=0 ">
+              <div class="flex align-items-center">
+                <div class="icon icon-40 icon-business-requirement mr-3"></div>
+                <h3 class="fontMedium pb-2 inline-block">Problem Statement
+                </h3>
+              </div>
+              <ul class="grid ml-2 mr-2 pl-4">
+                <li class="col-12 text-color" *ngFor="let item of project.problemStatementCSV">{{item}}</li>
+              </ul>
+            </ng-container>
+            <p-divider />
+
+            <ng-container *ngIf="project.promptCSV?.length !=0 ">
+              <div class="flex align-items-center">
+                <div class="icon icon-40 icon-prompt mr-3"></div>
+                <h3 class="fontMedium pb-2 inline-block">Prompt
+                </h3>
+              </div>
+              <ul class="grid ml-2 mr-2 pl-4">
+                <li class="col-12 text-color" *ngFor="let item of project.promptCSV">{{item}}</li>
+              </ul>
+            </ng-container>
+            <p-divider />
+            <ng-container *ngIf="project.successMetricsCSV?.length !=0 ">
+              <div class="flex align-items-center">
+                <div class="icon icon-40 icon-success-matrics mr-3"></div>
+                <h3 class="fontMedium pb-2 inline-block">Success Metrics
+                </h3>
+              </div>
+              <ul class="grid ml-2 mr-2 pl-4">
+                <li class="col-12 text-color" *ngFor="let item of project.successMetricsCSV">{{item}}</li>
+              </ul>
+            </ng-container>
+
+            <p-divider />
+            <ng-container *ngIf="project.clientNamesCSV?.length !=0 ">
+              <div class="flex align-items-center">
+                <div class="icon icon-40 icon-clients mr-3"></div>
+                <h3 class="fontMedium pb-2 inline-block">Client Names
+                </h3>
+              </div>
+              <ul class="grid ml-2 mr-2 pl-4">
+                <li class="col-12 text-color" *ngFor="let item of project.clientNamesCSV">{{item}}</li>
+              </ul>
+            </ng-container>
+
+          </div>
+        </div>
+        <!-- <div class="card card-footer grid gap-4">
+          <p-button class="btn-secondary border-round-xs" severity="danger" size="small" label="Try Application"
+            icon="pi pi-arrow-right" />
+          <p-button class="btn-secondary-outline border-round-xs" severity="danger" size="small" label="Guide Link"
+            icon="pi pi-link" iconPos="left" />
+        </div> -->
+      </div>
+
+
+    </div>
+  </div>
+</div>

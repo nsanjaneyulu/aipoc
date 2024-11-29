@@ -1,0 +1,10 @@
+.descriptioncard{
+    display: grid;
+    height: auto;
+    place-content: space-between;
+    .card-body {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 8px rgb(214 211 211);
+    }
+}

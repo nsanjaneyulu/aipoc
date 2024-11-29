@@ -1,0 +1,84 @@
+<div class="container ml-2 mr-2" *ngIf="project">
+    <div class="grid">
+        <div class="col-12">
+            <div class="flex align-items-center mb-2">
+                <div (click)="goBack()" class="mr-3 cursor-pointer"><i
+                        class="icon icon-32 icon-back cursor-pointer">&nbsp;</i>
+                    <!-- <p-button severity="danger"
+                        icon="pi pi-arrow-left icon-back" /> -->
+                </div>
+                <div>
+                    <h1 class="m-0 fontSizeXL fontBold headingtext">{{project?.title}}</h1>
+
+                </div>
+            </div>
+            <p-chip [label]="tag" *ngFor="let tag of project?.tagsCSV" class="mr-2" />
+            <p class="fontSizeMD fontMedium regular-color lineHight-p">
+                {{project?.description}}
+            </p>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="col-7 mb-2">
+            <app-carouselproduct [data]="bannerList"></app-carouselproduct>
+
+        </div>
+        <div class="col-5">
+            <div class="card descriptioncard block p-3 pt-0 mt-0 ">
+
+                <div class="card card-body mb-4 mt-0 p-3 overflow-y-auto h-28rem mt-0">
+                    <ng-container *ngIf="project.solutionCSV?.length !=0 ">
+                        <div class="flex align-items-center">
+                            <div class="icon icon-40 icon-business-requirement mr-3"></div>
+                            <h3 class="fontMedium  pb-2 inline-block fontSizeMD fontBold">
+                                Business
+                                Requirements
+                            </h3>
+                        </div>
+                        <ul class="grid">
+                            <li class="col-12 text-color" *ngFor="let item of project.solutionCSV">{{item}}</li>
+                        </ul>
+                    </ng-container>
+                    <p-divider />
+
+                    <ng-container *ngIf="project.promptCSV?.length !=0 ">
+                        <div class="flex align-items-center">
+                            <div class="icon icon-40 icon-bussiness-solutions mr-3"></div>
+                            <h3 class="fontMedium  pb-2 inline-block fontSizeMD fontBold">
+                                Delphi Solutions
+                            </h3>
+                        </div>
+                        <ul class="grid">
+                            <li class="col-12 text-color" *ngFor="let item of project.solutionCSV">{{item}}</li>
+                        </ul>
+                    </ng-container>
+                    <p-divider />
+                    <ng-container *ngIf="project.valuedAddedCSV?.length !=0 ">
+                        <div class="flex align-items-center">
+                            <div class="icon icon-40 icon-value-added mr-3"></div>
+                            <h3 class="fontMedium  pb-2 inline-block fontSizeMD fontBold">
+                                Value Added
+                            </h3>
+                        </div>
+                        <ul class="grid">
+                            <li class="col-12 text-color" *ngFor="let item of project.valuedAddedCSV">{{item}}</li>
+                        </ul>
+                    </ng-container>
+                    <!-- <p-divider /> -->
+
+                </div>
+                <div class="card card-footer grid gap-4 pl-2">
+                    <!-- <a [href]="project?.appLink" target="_blank" rel="noopener noreferrer"
+                        class="font-bold btn-secondary p-button border-round-xs">
+                        Try Application
+                    </a> -->
+                    <p-button [link]="true" (click)="gotoTryApplication(project?.appLink)" class="h-3rem  btn-secondary
+                        border-round-xs" severity="danger" size="small" label="Try Application"
+                        icon="pi pi-arrow-right" />
+                    <p-button (click)="gotoGuide(project?.guideLink)"
+                        class="btn-secondary-outline h-3rem border-round-xs" severity="danger" size="small"
+                        label="Guide Link" icon="pi pi-link" iconPos="left" />
+                </div>
+            </div>
+        </div>
+    </div>
